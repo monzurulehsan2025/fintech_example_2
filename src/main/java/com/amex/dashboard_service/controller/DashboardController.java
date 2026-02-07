@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -35,11 +34,17 @@ public class DashboardController {
 
     @GetMapping("/projects")
     public List<Project> getProjects() {
-        // Mock project data: now only returning name as requested
-        return Arrays.asList(
-                new Project("1", "MYCA React Migration"),
-                new Project("2", "Global Rewards Portal"),
-                new Project("3", "Membership Automation API"),
-                new Project("4", "Travel & Lifestyle Dashboard"));
+        List<Project> projects = new ArrayList<>();
+        String[] prefixes = { "Global", "Cloud", "Digital", "Mobile", "Secure", "Smart", "Infinite", "Nexus", "Prime",
+                "Quantum" };
+        String[] suffixes = { "Platform", "Sync", "Gateway", "Vault", "Core", "Engine", "Network", "Portal", "Ledger",
+                "Interface" };
+
+        for (int i = 1; i <= 50; i++) {
+            String id = String.valueOf(i);
+            String name = prefixes[i % 10] + " " + suffixes[(i * 3) % 10] + " " + i;
+            projects.add(new Project(id, name));
+        }
+        return projects;
     }
 }
