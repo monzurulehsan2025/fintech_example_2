@@ -61,8 +61,7 @@ function App() {
     <div className="dashboard">
       <header>
         <div>
-          <h1>Global Web Engineering</h1>
-          <p className="subtitle">Dashboard | American Express</p>
+          <h1>Fintech Dashboard</h1>
         </div>
         <div className="badge badge-in-progress">Q1 FY2026</div>
       </header>
