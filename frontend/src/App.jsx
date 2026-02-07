@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Activity, Users, Zap, AlertCircle, RefreshCw, Layers } from 'lucide-react'
+import { Activity, Users, Zap, AlertCircle, RefreshCw, Layers, Cloud } from 'lucide-react'
 import './App.css'
 
 function App() {
@@ -90,6 +90,12 @@ function App() {
           <div className="metric-label"><AlertCircle size={16} /> Error Rate</div>
           <div className="metric-value">{metrics.errorRate}%</div>
           <div className="metric-trend trend-down">▼ 0.01% decrease</div>
+        </div>
+
+        <div className="card">
+          <div className="metric-label"><Cloud size={16} /> Cloud Migration</div>
+          <div className="metric-value">{metrics.cloudMigrationSpeed}%</div>
+          <div className="metric-trend trend-up">▲ 12% faster than Q4</div>
         </div>
       </div>
 

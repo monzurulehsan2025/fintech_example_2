@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,10 +16,21 @@ import java.util.List;
 @CrossOrigin(origins = "*") // Allow frontend to access
 public class DashboardController {
 
+    private final List<Metrics> metricsHistory = new ArrayList<>();
+
+    public DashboardController() {
+        // Initialize with default metric including cloudMigrationSpeed (85.5%)
+        metricsHistory.add(new Metrics(1250000, 99.98, 45, 0.02, 85.5));
+    }
+
     @GetMapping("/dashboard/metrics")
     public Metrics getDashboardMetrics() {
-        // Mock data
-        return new Metrics(1250000, 99.98, 45, 0.02);
+        return metricsHistory.get(metricsHistory.size() - 1);
+    }
+
+    @GetMapping("/dashboard/metrics/history")
+    public List<Metrics> getMetricsHistory() {
+        return metricsHistory;
     }
 
     @GetMapping("/projects")
