@@ -35,12 +35,11 @@ public class DashboardController {
 
     @GetMapping("/projects")
     public List<Project> getProjects() {
-        // Mock project data relevant for modernizing web apps (React/Angular mentioned
-        // in JD)
+        // Mock project data: now only returning name as requested
         return Arrays.asList(
-                new Project("1", "MYCA React Migration", "In Progress", "Sarah Johnson", 65),
-                new Project("2", "Global Rewards Portal", "Planning", "Michael Chen", 10),
-                new Project("3", "Membership Automation API", "In Progress", "Emily Rodriguez", 40),
-                new Project("4", "Travel & Lifestyle Dashboard", "Completed", "David Smith", 100));
+                new Project("1", "MYCA React Migration"),
+                new Project("2", "Global Rewards Portal"),
+                new Project("3", "Membership Automation API"),
+                new Project("4", "Travel & Lifestyle Dashboard"));
     }
 }

@@ -101,29 +101,12 @@ function App() {
           <thead>
             <tr>
               <th>Project Name</th>
-              <th>Lead</th>
-              <th>Status</th>
-              <th>Progress</th>
             </tr>
           </thead>
           <tbody>
             {projects.map(proj => (
               <tr key={proj.id}>
                 <td style={{ fontWeight: 600 }}>{proj.name}</td>
-                <td>{proj.lead}</td>
-                <td>
-                  <span className={`badge badge-${proj.status.toLowerCase().replace(' ', '-')}`}>
-                    {proj.status}
-                  </span>
-                </td>
-                <td>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <div className="progress-bar">
-                      <div className="progress-fill" style={{ width: `${proj.completionPercentage}%` }}></div>
-                    </div>
-                    <span>{proj.completionPercentage}%</span>
-                  </div>
-                </td>
               </tr>
             ))}
           </tbody>
