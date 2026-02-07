@@ -40,7 +40,7 @@ public class DashboardController {
         String[] suffixes = { "Platform", "Sync", "Gateway", "Vault", "Core", "Engine", "Network", "Portal", "Ledger",
                 "Interface" };
 
-        for (int i = 1; i <= 50; i++) {
+        for (int i = 1; i <= 100; i++) {
             String id = String.valueOf(i);
             String name = prefixes[i % 10] + " " + suffixes[(i * 3) % 10] + " " + i;
             projects.add(new Project(id, name));
