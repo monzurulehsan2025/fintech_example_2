@@ -1,15 +1,12 @@
 package com.amex.dashboard_service.model;
 
 public class Metrics {
-    private long activeUsers;
     private double systemHealth;
     private int deploymentFrequency;
     private double errorRate;
     private double cloudMigrationSpeed; // Added metric
 
-    public Metrics(long activeUsers, double systemHealth, int deploymentFrequency, double errorRate,
-            double cloudMigrationSpeed) {
-        this.activeUsers = activeUsers;
+    public Metrics(double systemHealth, int deploymentFrequency, double errorRate, double cloudMigrationSpeed) {
         this.systemHealth = systemHealth;
         this.deploymentFrequency = deploymentFrequency;
         this.errorRate = errorRate;
@@ -17,14 +14,6 @@ public class Metrics {
     }
 
     // Getters and Setters
-    public long getActiveUsers() {
-        return activeUsers;
-    }
-
-    public void setActiveUsers(long activeUsers) {
-        this.activeUsers = activeUsers;
-    }
-
     public double getSystemHealth() {
         return systemHealth;
     }

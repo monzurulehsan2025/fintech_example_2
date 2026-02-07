@@ -20,7 +20,7 @@ public class DashboardController {
 
     public DashboardController() {
         // Initialize with default metric including cloudMigrationSpeed (85.5%)
-        metricsHistory.add(new Metrics(1250000, 99.98, 45, 0.02, 85.5));
+        metricsHistory.add(new Metrics(99.98, 45, 0.02, 85.5));
     }
 
     @GetMapping("/dashboard/metrics")

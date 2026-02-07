@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Activity, Users, Zap, AlertCircle, RefreshCw, Layers, Cloud } from 'lucide-react'
+import { Activity, Zap, AlertCircle, RefreshCw, Layers, Cloud } from 'lucide-react'
 import './App.css'
 
 function App() {
@@ -68,12 +68,6 @@ function App() {
       </header>
 
       <div className="metrics-grid">
-        <div className="card">
-          <div className="metric-label"><Users size={16} /> Active Users (Web)</div>
-          <div className="metric-value">{(metrics.activeUsers / 1000000).toFixed(1)}M</div>
-          <div className="metric-trend trend-up">▲ 4.2% from last month</div>
-        </div>
-
         <div className="card">
           <div className="metric-label"><Activity size={16} /> System Health</div>
           <div className="metric-value">{metrics.systemHealth}%</div>
